@@ -83,9 +83,9 @@ public_users.get('/review/:isbn',function (req, res) {
   res.send(books[isbn].reviews);
 });
 
-public_users.post("/",function (req,res){
+public_users.put("/auth/review/:isbn",function (req,res){
     if (req.body.review){
-        books[req.body.isbn] = {
+        books[req.params.isbn] = {
             "reviews":req.body.review
             }
     }
